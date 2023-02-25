@@ -7,6 +7,7 @@ import { errorHandler, notFound } from "./Middleware/Errors.js";
 import userRouter from "./Routes/UserRoutes.js";
 import orderRouter from "./Routes/orderRoutes.js";
 import cors from 'cors';
+const admin = require('firebase-admin');
 
 dotenv.config();
 connectDatabase();
