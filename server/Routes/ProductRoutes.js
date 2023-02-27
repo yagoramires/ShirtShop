@@ -11,6 +11,7 @@ productRoute.get(
   asyncHandler(async (req, res) => {
     const pageSize = 12;
     const page = Number(req.query.pageNumber) || 1;
+    console.log("paginas" + page);
     const keyword = req.query.keyword
       ? {
           name: {
@@ -19,12 +20,18 @@ productRoute.get(
           },
         }
       : {};
+    console.log("keyword" + keyword);
+
     const count = await Product.countDocuments({ ...keyword });
+    console.log("count" + count);
+
     const products = await Product.find({ ...keyword })
       .limit(pageSize)
       .skip(pageSize * (page - 1))
       .sort({ _id: -1 });
     res.json({ products, page, pages: Math.ceil(count / pageSize) });
+    console.log(products);
+
   })
 );
 

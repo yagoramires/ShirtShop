@@ -121,14 +121,14 @@ const AddProductMain = () => {
                   </div>
                   <div className="mb-4">
                     <label className="form-label">Images</label>
-                    <input
+                    {/* <input
                       className="form-control"
                       type="text"
                       placeholder="Enter Image URL"
                       value={image}
                       required
                       onChange={(e) => setImage(e.target.value)}
-                    />
+                    /> */}
                     <input className="form-control mt-3" type="file" />
                   </div>
                 </div>
