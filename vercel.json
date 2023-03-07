@@ -2,10 +2,12 @@
   "name": "shirt-shop-backend",
   "version": 2,
   "public": true,
-  "build": {
-    "src": "server/server.js",
-    "use": "@vercel/node"
-  },
+  "builds": [
+    {
+      "src": "server/server.js",
+      "use": "@vercel/node"
+    }
+  ],
   "routes": [
     {
       "src": "/(.*)",
